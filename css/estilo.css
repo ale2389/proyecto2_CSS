@@ -6,6 +6,7 @@
 body{
   background-color: #02010a;
   font-family: 'Dancing Script', cursive;
+	transform:
  }
 /*Propiedades de header*/
 #contenido {
@@ -25,6 +26,18 @@ header {
   display:flex;
   flex-direction:row;
   justify-content:space-around;
+	animation: slidein 1s;
+}
+@-webkit-keyframes slidein{
+	0%{
+		margin-top: 150%;
+	}
+	60%{
+		margin-top: -5%;
+	}
+	100%{
+		margin-top: 0%;
+	}
 }
 .sombra
 {
@@ -59,10 +72,10 @@ a:active{
 }
 a:visited{
   text-decoration: none;
-  color: yellow;
+  color: white;
 }
 /*imagenes*/
-article
+figure
 {
 	box-sizing: border-box;
 	float:left;
@@ -71,24 +84,39 @@ article
 	text-align: center;
 }
 #central{
-
   width: 100%;
-  height: 500px;
   background-color:#82c3a6;
+}
+#central img{
+		box-shadow: 2px 2px 3px #02010a;
 }
 #iz{
   width:50%;
   background-color:#d5c75f;
 }
 #iz img{
+	box-shadow: 2px 2px 3px #02010a;
 	border: 1px solid black;
+	transition: all 1s;
+}
+#iz img:hover{
+		transform: rotate(10deg) ;
+		box-shadow:2px 2px 3px #82c3a6;
+		border: 2px solid #82c3a6;
 }
 #der{
   width:50%;
-  background-color:#a8c75f;
+  background-color:#d5c75f;
 }
 #der img{
+	box-shadow: 2px 2px 3px #02010a;
 	border: 1px solid black;
+	transition: all 1s;
+}
+#der img:hover{
+		transform: translate(20px,-5px);
+		box-shadow:2px 2px 3px #82c3a6;
+		border: 2px solid #82c3a6;
 }
 
 @media screen and (min-width: 901px){
@@ -97,9 +125,13 @@ article
 		width: 100%;
 		margin: 0 auto;
 	}
-    a{
-    color: green;
-    }
+	.wrapper{
+		width: 100%;
+		height: 10em;
+	}
+	#F1, #F2, #F3, #F4, #F5, #F6{
+		width: 33%;
+	}
 }
 @media screen and (max-width: 900px){
 
@@ -108,45 +140,77 @@ article
   		width: 100%;
   		margin: 0 auto;
   	}
-      a{
-      color: red;
-      }
+		.wrapper{
+			width: 100%;
+		}
+		footer{
+			height: 20em;
+		}
+		#F1, #F2, #F3, #F4, #F5, #F6{
+			width: 33%;
+		}
 }
 @media screen and (max-width: 480px){
 
-  	#contenido
-  	{
+	#contenido{
   		width: 100%;
-  		margin: 0 auto;
-  	}
-  a{
-    color: blue;
-   }
-   #central
-   {
-     width: 100%;
-   }
-   #iz
-   {
-     width: 100%;
-   }
-   #der
-   {
-     width: 100%
-   }
+  		margin: 0 auto;}
+
+   #central {width: 100%; }
+   #iz {width: 100%;}
+   #der {width: 100%}
+	 footer{ height: 40em; }
+	 .contacto { width: 100%;}
+	 .terminos { width: 100%;}
+	 .redes_sociales	{	width: 100%;}
+	 .derechos	{width: 100%;	}
+	 header{
+	 display: -webkit-flex;
+	 display: flex;
+	 -webkit-flex-flow: row wrap;
+	 flex-flow: row wrap;
+	 }
+	 #F1, #F2, #F3, #F4, #F5, #F6{
+ 		width: 100%;
+ 	}
 }
 footer{
 background-color:#C6d5c5;
 border-radius: 0 0 10px 10px;
 width: 100%;
-height: 10em;
 padding-top: 2%;
 clear: both;
 display:flex;
 flex-direction:row;
 justify-content:space-around;
 }
-#redes_sociales img
+.wrapper{
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+}
+.wrapper div {
+	box-sizing: border-box;
+	min-width: 150px;
+	padding: 20px;
+}
+.redes_sociales img
 {
   width: 1.2em;
+}
+
+/*Pagina paisajes*/
+section{
+	background-color: #d5c75f;
+	width:100%;
+}
+#F1{
+	-webkit-filter:blur(10px);
+}
+#F2, #F4, #F6{
+	-webkit-filter:grayscale(100%);
+}
+#F3{
+	-webkit-filter:sepia(90%);
 }
