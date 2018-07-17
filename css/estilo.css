@@ -13,7 +13,9 @@ body{
   width: 900px;
   margin: 0 auto;
 }
-
+#contenido p{
+	font-size: 1.5em;
+}
 header {
   color: white;
   width: 100%;
@@ -67,12 +69,13 @@ a:hover{
   color: white;
 }
 a:active{
-  text-decoration: none;
   color: white;
 }
 a:visited{
-  text-decoration: none;
   color: white;
+}
+.active {
+text-decoration: none;
 }
 /*imagenes*/
 figure
